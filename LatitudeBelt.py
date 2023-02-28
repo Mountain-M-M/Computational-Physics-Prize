@@ -4,14 +4,14 @@ from numpy import *
 
 class LatitudeBelt:
   
-  def __init__(self, index, power, albedo, area, temperature, emissivity, energy_emitted):
+  def __init__(self, index, albedo, temperature, emissivity, area):
     self.index = index
-    self.power = power
+    # self.power = power
     self.albedo = albedo
     self.area = area
     self.temperature = temperature
     self.emissivity = emissivity
-    self.energy_emitted = energy_emitted
+    # self.energy_emitted = energy_emitted
 
   def calculate_area(self, index, number_of_latitude_belts, radius):
     N = number_of_latitude_belts
@@ -23,8 +23,25 @@ class LatitudeBelt:
     
     return area
 
-  def calculate_power():
-    pass
+  def calculate_power(self, radius, luminosity, distance_from_sun, num_of_latitude_belts):
+    r = radius
+    L = luminosity
+    D = distance_from_sun
+    n = self.index
+    N = num_of_latitude_belts
+    theta = n / N
+    a = self.albedo
+    A = self.area
 
-  def calculate_energy_emitted():
-    pass
+    power = L * A * (1 - a) / (4 * pi * D**2)
+    return power
+    
+
+  def calculate_energy_emitted(self, stefan):
+    s = stefan
+    e = self.emissivity
+    A = self.area
+    T = self.temperature
+    
+    energy_emitted = s * e * A * T ** 4
+    return energy_emitted
