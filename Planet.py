@@ -18,11 +18,18 @@ class Planet:
     N = self.num_of_latitude_belts
     theta = n / N
     a = albedo
-
-    
-
     A = area
 
     power = L * A * (1 - a) / (4 * pi * D**2)
 
     return power
+
+  def calculate_energy_emitted(self, stefan, emissivity, area, temperature):
+    s = stefan
+    e = emissivity
+    A = area
+    T = temperature
+    
+    emitted_energy = s * e * A * T ** 4
+
+    return emitted_energy
