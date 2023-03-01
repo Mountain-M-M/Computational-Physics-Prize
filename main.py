@@ -6,18 +6,17 @@ from LatitudeBelt import LatitudeBelt
 
 # Global Variables
 
-number_of_latitude_belts = 100000
+number_of_latitude_belts = 10000
 array_of_latitude_belts = []
 albedo = 0.3
 stefan = 5.670e-8
 radius_of_planet = 6.4e6
-obliquity = 23.4
 distance_between_planet_and_sun = 1.50e11
 luminosity = 3.8e26
 
 # Instantiating Objects
 
-planet = Planet(radius_of_planet, obliquity, number_of_latitude_belts)
+planet = Planet(radius_of_planet, number_of_latitude_belts)
 sun = Sun(distance_between_planet_and_sun, luminosity)
 
 for index in range(number_of_latitude_belts):
@@ -41,4 +40,4 @@ testtotal = 0
 for l in array_of_latitude_belts:
   testtotal += l.power
 
-print(testtotal)
+print("total", testtotal)

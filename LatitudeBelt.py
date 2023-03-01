@@ -16,24 +16,24 @@ class LatitudeBelt:
   def calculate_area(self, index, number_of_latitude_belts, radius):
     N = number_of_latitude_belts
     n = index
-    theta = n / N
+    theta = pi / N
     r = radius
     
-    area = (cos(pi * theta) - cos(pi * (theta + 1 / N))) * 2 * pi * r
+    area = (cos(n * theta) - cos(theta * (1 + n))) * 2 * pi * r ** 2
     
     return area
 
   def calculate_power(self, radius, luminosity, distance_from_sun, num_of_latitude_belts):
-    r = radius
     L = luminosity
     D = distance_from_sun
-    n = self.index
-    N = num_of_latitude_belts
-    theta = n / N
     a = self.albedo
     A = self.area
 
-    power = (1 - a) * (L * r * (arccos(theta * n / r) - arccos(theta * (n+1) / r))) / (A * D)
+    intensity = L / (4 * pi * D ** 2)
+
+    I = intensity
+
+    power = I * A * (1 - a)
 
     return power
     
