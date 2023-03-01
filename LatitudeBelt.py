@@ -33,7 +33,8 @@ class LatitudeBelt:
     a = self.albedo
     A = self.area
 
-    power = L * A * (1 - a) / (4 * pi * D**2)
+    power = (1 - a) * (L * r * (arccos(theta * n / r) - arccos(theta * (n+1) / r))) / (A * D)
+
     return power
     
 

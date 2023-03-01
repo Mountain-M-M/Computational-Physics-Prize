@@ -1,16 +1,16 @@
 # Importing Files
 
-from Planet import *
-from Sun import *
-from LatitudeBelt import *
+from Planet import Planet
+from Sun import Sun
+from LatitudeBelt import LatitudeBelt
 
 # Global Variables
 
-number_of_latitude_belts = 10
+number_of_latitude_belts = 100000
 array_of_latitude_belts = []
 albedo = 0.3
 stefan = 5.670e-8
-radius_of_planet = 6.378e6
+radius_of_planet = 6.4e6
 obliquity = 23.4
 distance_between_planet_and_sun = 1.50e11
 luminosity = 3.8e26
@@ -37,4 +37,8 @@ for latitude_belt in array_of_latitude_belts:
 for latitude_belt in array_of_latitude_belts:
   latitude_belt.energy_emitted = latitude_belt.calculate_energy_emitted(stefan)
 
-print(array_of_latitude_belts[0].energy_emitted)
+testtotal = 0
+for l in array_of_latitude_belts:
+  testtotal += l.power
+
+print(testtotal)
