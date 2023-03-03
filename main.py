@@ -4,6 +4,7 @@ from Planet import Planet
 from Sun import Sun
 from LatitudeBelt import LatitudeBelt
 
+
 # Global Variables
 
 number_of_latitude_belts = 10000
@@ -41,3 +42,30 @@ for l in array_of_latitude_belts:
   testtotal += l.power
 
 print("total", testtotal)
+
+
+
+
+
+
+
+
+# # Define the function that will update the energy absorbed label
+# def update_energy(val):
+#     energy = float(val) ** 2
+#     energy_label.config(text=f"Energy Absorbed: {energy}")
+
+# # Create the Tkinter window
+# window = tk.Tk()
+# window.title("Albedo Dashboard")
+
+# # Create the albedo slider and label
+# albedo_label = tk.Label(window, text="Albedo:")
+# albedo_label.pack(side="left")
+# albedo_slider = tk.Scale(window, from_=0, to=10, resolution=1, orient="horizontal", command=update_energy)
+# albedo_slider.pack(side="left")
+# energy_label = tk.Label(window, text="Energy Absorbed: 0")
+# energy_label.pack(side="left")
+
+# # Run the Tkinter event loop
+# window.mainloop()
